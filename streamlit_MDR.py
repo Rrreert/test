@@ -2,6 +2,8 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import shap
+import matplotlib.pyplot as plt
 
 if 'model' not in st.session_state:
     model = joblib.load('model.pkl')
