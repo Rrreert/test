@@ -21,7 +21,7 @@ def set_background():
     h1 {padding: 0.75rem 0px 0.75rem;margin-top: 2rem;box-shadow: 0px 3px 5px gray;}
     h2 {background-color: #B266FF;margin-top: 2vh;border-left: red solid 0.6vh}
     .css-1avcm0n {background: rgb(14, 17, 23, 0)}
-    .css-18ni7ap {background: rgb(0, 120, 190);z-index:1;height:3rem}
+    .css-18ni7ap {background: #B266FF;z-index:1;height:3rem}
     #MainMenu {visibility:hidden;}
     footer {visibility:hidden;}
     .css-z5fcl4 {padding: 0 1rem 1rem}
