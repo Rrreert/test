@@ -10,7 +10,7 @@ if 'model' not in st.session_state:
 else:
     model = st.session_state["model"]
 
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 
 def set_background():
