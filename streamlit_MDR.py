@@ -33,10 +33,9 @@ def set_background():
 
 
 set_background()
+st.markdown("<h1 style='text-align: center'>Helicobacter pylori Multidrug Resistance Prediction Based on a Machine Learning Model</h1>", unsafe_allow_html=True)
 for i in range(5):
     st.write("")
-st.markdown("<h1 style='text-align: center'>Helicobacter pylori Multidrug Resistance Prediction Based on a Machine Learning Model</h1>", unsafe_allow_html=True)
-
 with st.form("my_form"):
     col7, col8 = st.columns([5, 5])
     with col7:
