@@ -76,3 +76,14 @@ with st.form("my_form"):
             st.subheader(f"The predicted result of Hp MDR:  Resistant")
         # 输出概率
         st.subheader(f"The probability of Hp MDR:  {'%.2f' % float(Predict_proba * 100) + '%'}")
+
+        with st.spinner('force plot generation, please wait...'):
+            explainer = shap.TreeExplainer(model)
+            shap_values = explainer.shap_values(X)
+            shap.force_plot(explainer.expected_value, shap_values[0], X.iloc[0].values, feature_names=['rlpA Thr216Lys', 'group_1364', 'glmU Glu162Thr', 'HP_0731 Asn511Asp', 
+                                                                                                       'smc', 'gspA', 'group_333', 'polA Val112Thr', 'omp13 SerLeu10PhePhe', 'HP_0922 Ser2141Ala'], matplotlib=True, show=False, figsize=(20, 5))
+            plt.xticks(fontproperties='Times New Roman', size=16)
+            plt.yticks(fontproperties='Times New Roman', size=16)
+            plt.tight_layout()
+            plt.savefig('force.png', dpi=600)
+            st.image('force.png')
