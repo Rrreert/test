@@ -3,14 +3,13 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-st.header("")
 if 'model' not in st.session_state:
     model = joblib.load('model.pkl')
     st.session_state["model"] = model
 else:
     model = st.session_state["model"]
 
-# st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 
 
 def set_background():
