@@ -19,7 +19,7 @@ def set_background():
     <style>
     .css-1nnpbs {width: 100vw}
     h1 {padding: 0.75rem 0px 0.75rem;margin-top: 2rem;box-shadow: 0px 3px 5px gray;}
-    h2 {background-color: #8080801f;margin-top: 2vh;border-left: red solid 0.6vh}
+    h2 {background-color: #B266FF;margin-top: 2vh;border-left: red solid 0.6vh}
     .css-1avcm0n {background: rgb(14, 17, 23, 0)}
     .css-18ni7ap {background: rgb(0, 120, 190);z-index:1;height:3rem}
     #MainMenu {visibility:hidden;}
@@ -36,7 +36,7 @@ def set_background():
 
 set_background()
 st.markdown("<h1 style='text-align: center'>Helicobacter pylori Multidrug Resistance Prediction Based on a Machine Learning Model</h1>", unsafe_allow_html=True)
-for i in range(5):
+for i in range(3):
     st.write("")
 with st.form("my_form"):
     col7, col8 = st.columns([5, 5])
