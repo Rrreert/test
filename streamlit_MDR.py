@@ -39,17 +39,17 @@ st.markdown("<h1 style='text-align: center'>Helicobacter pylori Multidrug Resist
 with st.form("my_form"):
     col7, col8 = st.columns([5, 5])
     with col7:
-        a = st.sidebar.selectbox("rlpA Thr216Lys", ("presence", "absence"))
-        b = st.sidebar.selectbox("group_1364", ("presence", "absence"))
-        c = st.sidebar.selectbox("glmU Glu162Thr", ("presence", "absence"))
-        d = st.sidebar.selectbox("HP_0731 Asn511Asp", ("presence", "absence"))
-        e = st.sidebar.selectbox("smc", ("presence", "absence"))
+        a = st.selectbox("rlpA Thr216Lys", ("presence", "absence"))
+        b = st.selectbox("group_1364", ("presence", "absence"))
+        c = st.selectbox("glmU Glu162Thr", ("presence", "absence"))
+        d = st.selectbox("HP_0731 Asn511Asp", ("presence", "absence"))
+        e = st.selectbox("smc", ("presence", "absence"))
     with col8:
-        f = st.sidebar.selectbox("gspA", ("presence", "absence"))
-        g = st.sidebar.selectbox("group_333", ("presence", "absence"))
-        h = st.sidebar.selectbox("polA Val112Thr", ("presence", "absence"))
-        i = st.sidebar.selectbox("omp13 SerLeu10PhePhe", ("presence", "absence"))
-        j = st.sidebar.selectbox("HP_0922 Ser2141Ala", ("presence", "absence"))
+        f = st.selectbox("gspA", ("presence", "absence"))
+        g = st.selectbox("group_333", ("presence", "absence"))
+        h = st.selectbox("polA Val112Thr", ("presence", "absence"))
+        i = st.selectbox("omp13 SerLeu10PhePhe", ("presence", "absence"))
+        j = st.selectbox("HP_0922 Ser2141Ala", ("presence", "absence"))
     col4, col5, col6 = st.columns([2, 2, 6])
     with col4:
         submitted = st.form_submit_button("Predict")
