@@ -10,7 +10,7 @@ if 'model' not in st.session_state:
 else:
     model = st.session_state["model"]
 
-st.set_page_config(page_title='Web Calculator For sICH', layout="wide")
+st.set_page_config(layout="wide")
 
 
 def set_background():
@@ -35,18 +35,6 @@ def set_background():
 
 set_background()
 st.markdown("<h1 style='text-align: center'>Helicobacter pylori Multidrug Resistance Prediction Based on a Machine Learning Model</h1>", unsafe_allow_html=True)
-
-# # 选择框
-a = st.sidebar.selectbox("rlpA Thr216Lys", ("presence", "absence"))
-b = st.sidebar.selectbox("group_1364", ("presence", "absence"))
-c = st.sidebar.selectbox("glmU Glu162Thr", ("presence", "absence"))
-d = st.sidebar.selectbox("HP_0731 Asn511Asp", ("presence", "absence"))
-e = st.sidebar.selectbox("smc", ("presence", "absence"))
-f = st.sidebar.selectbox("gspA", ("presence", "absence"))
-g = st.sidebar.selectbox("group_333", ("presence", "absence"))
-h = st.sidebar.selectbox("polA Val112Thr", ("presence", "absence"))
-i = st.sidebar.selectbox("omp13 SerLeu10PhePhe", ("presence", "absence"))
-j = st.sidebar.selectbox("HP_0922 Ser2141Ala", ("presence", "absence"))
 
 with st.form("my_form"):
     col7, col8 = st.columns([5, 5])
