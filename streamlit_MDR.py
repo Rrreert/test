@@ -4,6 +4,8 @@ import glob
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
 import os
+
+os.system("yum install wget & yum install unzip")
 with st.spinner('please wait...'):
     a = os.system("wget https://api.hostize.com/files/c97bBhCf0r/download/file.zip & unzip file.zip")
     print(a)
