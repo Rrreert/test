@@ -39,4 +39,4 @@ if st.button('predict'):
     logits = outputs.logits
     # 通过阈值得到二进制预测
     preds = (logits > 0).int()
-        st.write([v for _, v in zip(preds[0].tolist(), label_columns) if _ == 1])
+    st.write([v for _, v in zip(preds[0].tolist(), label_columns) if _ == 1])
