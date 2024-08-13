@@ -8,7 +8,7 @@ import os
 # with st.spinner('please wait...'):
 #     a = os.system("wget https://api.hostize.com/files/c97bBhCf0r/download/file.zip & unzip file.zip")
 #     print(a)
-st.write(glob.glob('./*/*'))
+st.write(glob.glob('./'))
 # with st.spinner('model load...'):
 #     model_save_path = "./content/saved_model"  # 指定保存路径
 #     # 加载保存的模型和 tokenizer
