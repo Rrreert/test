@@ -28,7 +28,7 @@ loaded_model = st.session_state["model"]
 loaded_tokenizer = st.session_state["tokenizer"]
 
 test_txt = st.text_area("请输入文本", None)
-if st.button('predict'):
+if test_txt and st.button('predict'):
     with st.spinner('model load...'):
         # Tokenize新数据
         new_data = [test_txt]
