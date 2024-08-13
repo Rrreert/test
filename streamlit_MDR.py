@@ -18,6 +18,7 @@ if not os.path.exists(model_save_path):
     file.extractall('./')
     # 关闭文件流
     file.close()
+    os.remove(output)
 
 if "model" not in st.session_state:
     # 加载保存的模型和 tokenizer
