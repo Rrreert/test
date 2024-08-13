@@ -8,6 +8,7 @@ import os
 # with st.spinner('please wait...'):
 #     a = os.system("wget https://api.hostize.com/files/c97bBhCf0r/download/file.zip & unzip file.zip")
 #     print(a)
+label_columns = ['Spiritual', 'Physical', 'Intellectual', 'Social', 'Vocational', 'Emotional']
 model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", cache_dir='proj', num_labels=len(label_columns))
 model.save_pretrained('./linshi/')
 st.write(os.listdir('./'))
