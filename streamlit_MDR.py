@@ -8,6 +8,8 @@ import os
 # with st.spinner('please wait...'):
 #     a = os.system("wget https://api.hostize.com/files/c97bBhCf0r/download/file.zip & unzip file.zip")
 #     print(a)
+model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", cache_dir='proj', num_labels=len(label_columns))
+model.save_pretrained('./linshi/')
 st.write(os.listdir('./'))
 # with st.spinner('model load...'):
 #     model_save_path = "./content/saved_model"  # 指定保存路径
