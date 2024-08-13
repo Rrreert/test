@@ -20,16 +20,16 @@ if not os.path.exists(output):
 # if not os.path.exists('./saved_model/model.safetensors'):
 #     model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", cache_dir='proj', num_labels=len(label_columns))
 #     model.save_pretrained('./saved_model/')
-import zipfile
+# import zipfile
 
-# 读取压缩文件
-file=zipfile.ZipFile(output)
-file.extractall('./')
-# 关闭文件流
-file.close()
+# # 读取压缩文件
+# file=zipfile.ZipFile(output)
+# file.extractall('./')
+# # 关闭文件流
+# file.close()
 
 
-st.write(os.listdir('./saved_model/'))
+st.write(os.listdir('./'))
 # test_txt = "I don‚Äôt understand how I‚Äôm feeling and all I can describe it as is numbness but it‚Äôs past that point and I‚Äôve felt like this for a long time, I feel like I don‚Äôt belong to this life like it isn‚Äôt for me. I can‚Äôt see myself in any career, my own family my own little life I can‚Äôt see it , I‚Äôm so disconnected from social interaction I don‚Äôt leave my house much and the sad thing is as much as I hate it I don‚Äôt want to change it I have no motivation I‚Äôm so tired to the point I don‚Äôt see a point on living when I‚Äôm so tired I can‚Äôt do daily life like everyone. What is the point to this life? How do you really find happiness I feel nothing I get the occasional anger and I‚Äôm always Irritated but besides that I feel nothing and I hate it I can‚Äôt cry I can‚Äôt laugh I can‚Äôt feel anything"
 # with st.spinner('model load...'):
 #     model_save_path = "./saved_model"  # 指定保存路径
