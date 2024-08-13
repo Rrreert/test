@@ -28,7 +28,6 @@ if "model" not in st.session_state:
 loaded_model = st.session_state["model"]
 loaded_tokenizer = st.session_state["tokenizer"]
 
-st.write(os.listdir('./'))
 test_txt = st.text_area("请输入文本", None)
 if st.button('predict'):
     # Tokenize新数据
