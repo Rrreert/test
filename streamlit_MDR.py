@@ -9,9 +9,10 @@ import os
 #     a = os.system("wget https://api.hostize.com/files/c97bBhCf0r/download/file.zip & unzip file.zip")
 #     print(a)
 label_columns = ['Spiritual', 'Physical', 'Intellectual', 'Social', 'Vocational', 'Emotional']
-model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", cache_dir='proj', num_labels=len(label_columns))
-model.save_pretrained('./linshi/')
-st.write(os.listdir('./'))
+if not os.path.exists('./linshi'):
+    model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", cache_dir='proj', num_labels=len(label_columns))
+    model.save_pretrained('./linshi/')
+st.write(os.listdir('./linshi/'))
 # with st.spinner('model load...'):
 #     model_save_path = "./content/saved_model"  # 指定保存路径
 #     # 加载保存的模型和 tokenizer
