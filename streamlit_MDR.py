@@ -21,22 +21,23 @@ if not os.path.exists(model_save_path):
     os.remove(output)
 
 if "model" not in st.session_state:
-    # 加载保存的模型和 tokenizer
-    st.session_state["model"] = AutoModelForSequenceClassification.from_pretrained(model_save_path)
-    st.session_state["tokenizer"] = AutoTokenizer.from_pretrained(model_save_path)
+    with st.spinner('model load...'):
+        # 加载保存的模型和 tokenizer
+        st.session_state["model"] = AutoModelForSequenceClassification.from_pretrained(model_save_path)
+        st.session_state["tokenizer"] = AutoTokenizer.from_pretrained(model_save_path)
 loaded_model = st.session_state["model"]
 loaded_tokenizer = st.session_state["tokenizer"]
 
+st.write(os.listdir('./'))
 test_txt = st.text_area("请输入文本", None)
-if test_txt and st.button('predict'):
-    with st.spinner('model load...'):
-        # Tokenize新数据
-        new_data = [test_txt]
-        inputs = loaded_tokenizer(new_data, padding="max_length", truncation=True, max_length=512, return_tensors="pt")
-        
-        # 模型推理
-        outputs = loaded_model(**inputs)
-        logits = outputs.logits
-        # 通过阈值得到二进制预测
-        preds = (logits > 0).int()
+if st.button('predict'):
+    # Tokenize新数据
+    new_data = [test_txt]
+    inputs = loaded_tokenizer(new_data, padding="max_length", truncation=True, max_length=512, return_tensors="pt")
+    
+    # 模型推理
+    outputs = loaded_model(**inputs)
+    logits = outputs.logits
+    # 通过阈值得到二进制预测
+    preds = (logits > 0).int()
         st.write([v for _, v in zip(preds[0].tolist(), label_columns) if _ == 1])
