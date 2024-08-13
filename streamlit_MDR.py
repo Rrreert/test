@@ -19,6 +19,7 @@ with st.spinner('model load...'):
     # Tokenize新数据
     new_data = [test_txt]
     inputs = loaded_tokenizer(new_data, padding="max_length", truncation=True, max_length=512, return_tensors="pt")
+    st.write(inputs)
     
     # 模型推理
     outputs = loaded_model(**inputs)
