@@ -28,14 +28,15 @@ loaded_model = st.session_state["model"]
 loaded_tokenizer = st.session_state["tokenizer"]
 
 test_txt = "I don‚Äôt understand how I‚Äôm feeling and all I can describe it as is numbness but it‚Äôs past that point and I‚Äôve felt like this for a long time, I feel like I don‚Äôt belong to this life like it isn‚Äôt for me. I can‚Äôt see myself in any career, my own family my own little life I can‚Äôt see it , I‚Äôm so disconnected from social interaction I don‚Äôt leave my house much and the sad thing is as much as I hate it I don‚Äôt want to change it I have no motivation I‚Äôm so tired to the point I don‚Äôt see a point on living when I‚Äôm so tired I can‚Äôt do daily life like everyone. What is the point to this life? How do you really find happiness I feel nothing I get the occasional anger and I‚Äôm always Irritated but besides that I feel nothing and I hate it I can‚Äôt cry I can‚Äôt laugh I can‚Äôt feel anything"
-with st.spinner('model load...'):
-    # Tokenize新数据
-    new_data = [test_txt]
-    inputs = loaded_tokenizer(new_data, padding="max_length", truncation=True, max_length=512, return_tensors="pt")
-    
-    # 模型推理
-    outputs = loaded_model(**inputs)
-    logits = outputs.logits
-    # 通过阈值得到二进制预测
-    preds = (logits > 0).int()
-    st.write(preds)
+if st.button('predict'):
+    with st.spinner('model load...'):
+        # Tokenize新数据
+        new_data = [test_txt]
+        inputs = loaded_tokenizer(new_data, padding="max_length", truncation=True, max_length=512, return_tensors="pt")
+        
+        # 模型推理
+        outputs = loaded_model(**inputs)
+        logits = outputs.logits
+        # 通过阈值得到二进制预测
+        preds = (logits > 0).int()
+        st.write([v for _, v in zip(preds[0].tolist(), label_columns) if _ == 1])
