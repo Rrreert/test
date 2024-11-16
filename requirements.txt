@@ -3,6 +3,7 @@ open_clip_torch==2.0.1
 safetensors
 transformers==4.38.2
 opencv-python==4.9.0.80
+opencv-python-headless
 # transformers==4.42.4
 streamlit
 modelscope==1.14.0
