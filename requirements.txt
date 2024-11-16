@@ -1,5 +1,6 @@
 torch==2.1.0
 open_clip_torch==2.0.1
+safetensors
 # transformers==4.42.4
 streamlit
 modelscope==1.14.0
