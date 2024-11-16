@@ -7,5 +7,6 @@ opencv-python-headless
 # transformers==4.42.4
 streamlit
 modelscope==1.14.0
+librosa
 # pandas
 # gdown
