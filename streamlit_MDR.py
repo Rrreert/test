@@ -18,6 +18,7 @@ st.set_page_config(layout="wide")
 def set_background():
     page_bg_img = '''
     <style>
+    .header {background-color: #a869f7}
     .css-1nnpbs {width: 100vw}
     h1 {padding: 0.75rem 0px 0.75rem;margin-top: 2rem;box-shadow: 0px 3px 5px gray;}
     h2 {background-color: #B266FF;margin-top: 2vh;border-left: red solid 0.6vh}
